@@ -8,18 +8,22 @@ let pageContext: BrowserContext;
 let page: Page;
 let pageManager: PageManager;
 
-test.beforeAll( async ({ browser }) => {
+// test.beforeAll( async ({ browser }) => {
+// });
+
+// test.afterAll(async () => {
+//   await page.close();
+// });
+
+test.beforeEach( async ({ browser }) => {
   pageContext = await browser.newContext();
   page = await pageContext.newPage();
   pageManager = new PageManager(page);
-});
-
-test.afterAll(async () => {
-  await page.close();
-});
-
-test.beforeEach( async () => {
   //await pageManager.getHomePage().open();
+});
+
+test.afterEach(async () => {
+  await page.close();
 });
 
 test('@smoke Verify valid login', async () => {
@@ -39,7 +43,7 @@ test('Verify logout', async () => {
 });
 
 for(const data of loginData.invalid) {
-  test(`Verify invalid login ${data.username} ${data.password}`, async ({ page }) => {
+  test(`Verify invalid login ${data.username} ${data.password}`, async () => {
     await pageManager.getHomePage().open();
     await pageManager.getHomePage().login(data.username, data.password);
     if(data.errorMessage == "Please fill out this field.") {

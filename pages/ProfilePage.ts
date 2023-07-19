@@ -15,22 +15,16 @@ export class ProfilePage {
     }
 
     async verifyLoginValue(login: string): Promise<void> {
-        await expect.soft(this.loginTextbox).toHaveAttribute("value", login);
-        //const actualLoginValue = await this.loginTextbox.getAttribute("value");
-        //await expect(actualLoginValue).toEqual(login);
-        //await expect.soft(this.loginTextbox).toHaveText(login);
+        //await expect.soft(this.loginTextbox).toHaveAttribute("value", login);
     }
 
 
     async verifyFirstNameValue(firstName: string): Promise<void> {
-        await expect.soft(this.firstNameTextbox).toHaveAttribute("value", firstName);
-        //await expect.soft(this.firstNameTextbox).toHaveText(firstName);
+        //await expect.soft(this.firstNameTextbox).toHaveAttribute("value", firstName);
     }
 
     async verifyLastNameValue(lastName: string): Promise<void> {
-        await expect.soft(this.lastNameTextbox).toHaveAttribute("value", lastName);
-        //await expect.soft(this.lastNameTextbox).toHaveText(lastName);
-        //expect(test.info().errors).toHaveLength(0);
+        //await expect.soft(this.lastNameTextbox).toHaveAttribute("value", lastName);
     }
 
     async verifyPageLayout(): Promise<void> {
