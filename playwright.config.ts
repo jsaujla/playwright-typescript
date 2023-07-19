@@ -53,7 +53,7 @@ export default defineConfig({
 
     //ignoreHTTPSErrors: true,
     //permissions: ['geolocation'],
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
     //video: 'on-first-retry',
   },
