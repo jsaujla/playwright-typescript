@@ -1,0 +1,60 @@
+{
+    "valid": {
+        "login": "DYNAMIC",
+        "firstName": "John",
+        "lastName": "Smith",
+        "password": "Password1!",
+        "confirmPassword": "Password1!",
+        "notificationMessage": "Registration is successful"
+    },
+    "existingUser": [
+        {
+            "login": "test.user",
+            "firstName": "Ricky",
+            "lastName": "Ponting",
+            "password": "Password1!",
+            "confirmPassword": "Password1!",
+            "errorMessage": "User already exists"
+        },
+        {
+            "login": "test.user",
+            "firstName": "Ricky",
+            "lastName": "NewLName",
+            "password": "Password1!",
+            "confirmPassword": "Password1!",
+            "errorMessage": "User already exists"
+        },
+        {
+            "login": "test.user",
+            "firstName": "NewFName",
+            "lastName": "Ponting",
+            "password": "Password1!",
+            "confirmPassword": "Password1!",
+            "errorMessage": "User already exists"
+        },
+        {
+            "login": "test.user",
+            "firstName": "NewFName",
+            "lastName": "NewLName",
+            "password": "Password1!",
+            "confirmPassword": "Password1!",
+            "errorMessage": "User already exists"
+        },
+        {
+            "login": "test.user",
+            "firstName": "Ricky",
+            "lastName": "Ponting",
+            "password": "NewPass1!",
+            "confirmPassword": "NewPass1!",
+            "errorMessage": "User already exists"
+        },
+        {
+            "login": "test.user",
+            "firstName": "NewFName",
+            "lastName": "NewLName",
+            "password": "NewPass1!",
+            "confirmPassword": "NewPass1!",
+            "errorMessage": "User already exists"
+        }
+    ]
+}

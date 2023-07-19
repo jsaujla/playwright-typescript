@@ -1,0 +1,15 @@
+{
+    "endpoint": "/oauth/token",
+    "user": {
+        "test.user": {
+            "grant_type": "password",
+            "username": "test.user",
+            "password": "Password1!"
+        },
+        "logintest": {
+            "grant_type": "password",
+            "username": "logintest",
+            "password": "Password1!"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "valid": {
+        "username": "test.user",
+        "password": "Password1!",
+        "userFirstName": "Ricky"
+    },
+    "invalid": [
+        {
+            "username": "invaliduser",
+            "password": "invalidpassword",
+            "errorMessage": "Invalid username/password"
+        },
+        {
+            "username": "test.user",
+            "password": "invalidpassword",
+            "errorMessage": "Invalid username/password"
+        },
+        {
+            "username": "test.user",
+            "password": "",
+            "errorMessage": "Please fill out this field."
+        },
+        {
+            "username": "invaliduser",
+            "password": "Password1!",
+            "errorMessage": "Invalid username/password"
+        },
+        {
+            "username": "",
+            "password": "Password1!",
+            "errorMessage": "Please fill out this field."
+        },
+        {
+            "username": "",
+            "password": "",
+            "errorMessage": "Please fill out this field."
+        }
+    ]
+}
