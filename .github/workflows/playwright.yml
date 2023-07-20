@@ -25,9 +25,3 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-        
-    - name: Deploy playwright-report page to GitHub Page
-    - uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./playwright-report
