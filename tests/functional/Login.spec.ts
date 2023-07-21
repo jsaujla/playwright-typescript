@@ -1,6 +1,6 @@
 import { test, Page, BrowserContext } from '@playwright/test';
 import { PageManager } from '../../pages/PageManager';
-import { LoginApi } from '../../backend/LoginApi';
+import { LoginApi } from '../../api/LoginApi';
 import loginData from '../../test-data/login-data.json';
 import loginApiData from '../../test-data-api/login-api-data.json'
 

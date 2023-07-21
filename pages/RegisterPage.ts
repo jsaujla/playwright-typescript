@@ -16,7 +16,7 @@ export class RegisterPage {
 
     async open(): Promise<void> {
         await this.page.goto('/register');
-        await this.page.waitForLoadState('networkidle');
+        //await this.page.waitForLoadState('networkidle');
         //await expect(this.page).toHaveTitle("OrangeHRM");
     }
 
