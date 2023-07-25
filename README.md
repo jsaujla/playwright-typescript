@@ -8,7 +8,7 @@
 [![Playwright Tests](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright.yml)
 
 * Access playwright result report online  
-  https://jsaujla.github.io/playwright-typescript/playwright-report/index.html
+  https://jsaujla.github.io/playwright-typescript/
 
 ## Local setup ##
 
