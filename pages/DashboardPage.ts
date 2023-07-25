@@ -6,14 +6,22 @@ export class DashboardPage {
     private readonly profileLink = this.page.locator("//a[text()='Profile']");
     private readonly userFirstName = (firstName: string) => this.page.locator(`//*[contains(text(),'${firstName}')]`);
 
-    constructor(private readonly page: Page) {
+    protected constructor(private readonly page: Page) {
     }
 
     async open(): Promise<void> {
+        // this.page.on('request', request => {
+        //     console.log(request.url());
+        // })
         await this.page.goto('/');
-        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('networkidle', {timeout: 5000}).catch(() => {});
         await expect(this.page).toHaveTitle("Buggy Cars Rating");
+        //this.waitNetwork(10000);
     }
+
+    // async waitNetwork(timeout?: number) {
+    //     await this.page.waitForLoadState('networkidle', {timeout}).catch(() => {});
+    // }
 
     async verifyUserFirstNameDisplayed(firstName: string): Promise<void> {
         await this.page.waitForTimeout(1000);

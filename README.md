@@ -1,10 +1,16 @@
 # README #
 
 ### About the repository ###
-* The repository contains the implementation to demonstrate an effective use of 'playwright with typescript' to achieve web test automation. The implementation includes a demonstration of functional, api and visual test automation.
+* The repository contains the implementation to demonstrate an effective way to use 'playwright with typescript' to design and develop a web test automation framework. The implementation includes a demonstration of functional, api and visual test automation.
 * The website under test is 'buggy.justtestit'
 
+### GitHub Actions (CI) test execution result ###
 [![Playwright Tests](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright.yml)
+
+* Access playwright result report online  
+  https://jsaujla.github.io/playwright-typescript/playwright-report/index.html
+
+## Local setup ##
 
 ### Prerequisite for execution ###
 * Node.js installed
