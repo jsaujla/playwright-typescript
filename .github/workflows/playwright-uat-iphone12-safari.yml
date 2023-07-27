@@ -1,4 +1,4 @@
-name: Playwright Tests - UAT
+name: Playwright Tests | UAT | iPhone12 Safari
 on:
   push:
     branches: [ main, master ]
@@ -18,16 +18,10 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: set ENV=uat&&npx playwright test --project=chromium --grep=functional
+      run: set ENV=uat&&npx playwright test --project=iphone12-safari --grep=functional
     - uses: actions/upload-artifact@v3
       if: always()
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-
-    - name: Deploy report page to GitHub page
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./playwright-report
