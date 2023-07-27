@@ -1,4 +1,4 @@
-name: Playwright Tests | UAT | iPhone12 Safari
+name: Playwright Tests | PROD | iPhone12 Safari
 on:
   push:
     branches: [ main, master ]
@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: set ENV=uat&&npx playwright test --project=iphone12-safari --grep=functional
+      run: set ENV=prod&&npx playwright test --project=iphone12-safari --grep=functional
     - uses: actions/upload-artifact@v3
       if: always()
       with:

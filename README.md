@@ -5,9 +5,9 @@
 * The website under test is 'buggy.justtestit'
 
 ### GitHub Actions (CI) test execution result ###
-[![Playwright Tests | Chrome](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-chrome.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-chrome.yml)
+[![Playwright Tests | PROD | Chrome](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-chrome.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-chrome.yml)
 
-[![Playwright Tests | UAT | iPhone12 Safari](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-uat-iphone12-safari.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-uat-iphone12-safari.yml)
+[![Playwright Tests | PROD | iPhone12 Safari](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-iphone12-safari.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-iphone12-safari.yml)
 
 * Access playwright result report online  
   https://jsaujla.github.io/playwright-typescript/
