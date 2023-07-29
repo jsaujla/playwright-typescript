@@ -44,10 +44,10 @@ export default defineConfig({
     ['html'],
     ['list'],
     ['line'],
-    ['junit', { outputFile: 'test-results/junit-results.xml' }],
+    ['junit', { outputFile: 'test-results-additional/junit-results.xml' }],
     ['allure-playwright', {
       detail: true,
-      outputFolder: 'allure-results',
+      outputFolder: 'test-results-additional/allure-results',
       suiteTitle: false,
     }]
   ],

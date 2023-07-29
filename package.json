@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf allure-results/ && rimraf allure-report/",
+    "clean": "rimraf test-results-additional/",
     "test": "npm run clean && playwright test",
-    "generate-allure-report": "npx allure generate ./allure-results -o allure-report --clean",
-    "open-allure-report": "npx allure open allure-report",
+    "generate-allure-report": "npx allure generate ./test-results-additional/allure-results -o test-results-additional/allure-report --clean",
+    "open-allure-report": "npx allure open test-results-additional/allure-report",
     "env:prod": "set ENV=prod&&npx playwright test"
   },
   "keywords": [],
