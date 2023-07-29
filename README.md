@@ -5,15 +5,15 @@
 * The website under test is 'buggy.justtestit'
 
 ### GitHub Actions (CI) test execution result ###
-[![Playwright Tests | PROD | Google Chrome](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-chrome.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-chrome.yml)
+[![Playwright CI Tests | PROD | Google Chrome](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-chrome.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-chrome.yml)
 
-[![Playwright Tests | PROD | Mozilla Firefox](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-firefox.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-firefox.yml)
+[![Playwright CI Tests | PROD | Mozilla Firefox](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-firefox.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-firefox.yml)
 
-[![Playwright Tests | PROD | Safari](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-safari.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-safari.yml)
+[![Playwright CI Tests | PROD | Safari](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-safari.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-safari.yml)
 
-[![Playwright Tests | PROD | iPhone12 Safari](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-iphone12-safari.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-iphone12-safari.yml)
+[![Playwright CI Tests | PROD | iPhone12 Safari](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-iphone12-safari.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-iphone12-safari.yml)
 
-[![Playwright Tests | PROD | Galaxy S8 Chrome](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-galaxys8-chrome.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-galaxys8-chrome.yml)
+[![Playwright CI Tests | PROD | Galaxy S8 Chrome](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-galaxys8-chrome.yml/badge.svg)](https://github.com/jsaujla/playwright-typescript/actions/workflows/playwright-prod-galaxys8-chrome.yml)
 
 * Access playwright result report online  
   https://jsaujla.github.io/playwright-typescript/

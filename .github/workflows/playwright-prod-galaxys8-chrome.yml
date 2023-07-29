@@ -1,4 +1,4 @@
-name: Playwright Tests | PROD | Galaxy S8 Chrome
+name: Playwright CI Tests | PROD | Galaxy S8 Chrome
 on:
   push:
     branches: [ main, master ]
@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
     - name: Run Playwright tests
       run: set ENV=prod&&npx playwright test --project=galaxys8-chrome --grep=functional
     - uses: actions/upload-artifact@v3
