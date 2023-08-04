@@ -7,12 +7,10 @@ export class HomePage {
     private readonly loginButton = this.page.locator("button[type='submit']").nth(0);
     private readonly invalidLoginErrorMessage = (errorMessage: string) => this.page.locator(`//*[contains(text(),'${errorMessage}')]`);
 
-    constructor(private readonly page: Page) {
-    }
+    constructor(private readonly page: Page) {}
 
     async open(): Promise<void> {
         await this.page.goto('/');
-        await this.page.waitForLoadState('networkidle');
         await expect(this.page).toHaveTitle("Buggy Cars Rating");
     }
 
@@ -37,7 +35,6 @@ export class HomePage {
 
     async verifyPageLayout(): Promise<void> {
         await expect(this.loginTextbox).toBeVisible();
-        //await this.page.waitForTimeout(1000);
         await expect.soft(this.page).toHaveScreenshot("home-page.png", {
             mask: [this.page.locator("h3 small").nth(0), this.page.locator("h3 small").nth(1)],
             fullPage: true

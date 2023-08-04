@@ -11,13 +11,10 @@ export class RegisterPage {
     private readonly registrationSuccessfulMessage = (message: string) => this.page.locator(`//*[contains(text(),'${message}')]`);
     private readonly userAlreadyExistsErrorMessage = (errorMessage: string) => this.page.locator(`//*[contains(text(),'${errorMessage}')]`);
 
-    constructor(private readonly page: Page) {
-    }
+    constructor(private readonly page: Page) {}
 
     async open(): Promise<void> {
         await this.page.goto('/register');
-        //await this.page.waitForLoadState('networkidle');
-        //await expect(this.page).toHaveTitle("OrangeHRM");
     }
 
     async register(login: string, firstName: string, lastName: string, password: string, confirmPassword: string): Promise<void> {
@@ -39,7 +36,6 @@ export class RegisterPage {
 
     async verifyPageLayout(): Promise<void> {
         await expect(this.loginTextbox).toBeVisible();
-        //await this.page.waitForTimeout(1000);
         expect.soft(await this.page.screenshot({fullPage: true})).toMatchSnapshot('register-page.png');
     }
 

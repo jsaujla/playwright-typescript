@@ -6,11 +6,7 @@ import path from 'path';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-//require('dotenv').config();
 const env = process.env.ENV || 'qa';
-//  require('dovenv').config({
-//    path: path.resolve(__dirname, `.env.${env}`)
-//  });
 dotenv.config({
   path: path.resolve(__dirname, `.env.${env}`)
 })
@@ -56,8 +52,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://buggy.justtestit.org',
-    //baseURL: process.env.WEB_BASE_URL,
+    //baseURL: 'https://buggy.justtestit.org',
+    baseURL: process.env.WEB_BASE_URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
@@ -67,6 +63,9 @@ export default defineConfig({
     headless: true,
     screenshot: 'only-on-failure',
     //video: 'on-first-retry',
+    
+    // Viewport used for all pages in the context.
+    //viewport: { width: 1280, height: 720 },
   },
 
   /* Configure projects for major browsers */
@@ -121,15 +120,15 @@ export default defineConfig({
     // Maximum time expect() should wait for the condition to be met.
     timeout: 5000,
 
-    toHaveScreenshot: {
-      // An acceptable amount of pixels that could be different, unset by default.
-      //maxDiffPixels: 10,
-    },
+    // toHaveScreenshot: {
+    //   // An acceptable amount of pixels that could be different, unset by default.
+    //   maxDiffPixels: 10,
+    // },
 
-    toMatchSnapshot: {
-      // An acceptable ratio of pixels that are different to the total amount of pixels, between 0 and 1.
-      maxDiffPixelRatio: 0.1,
-    },
+    // toMatchSnapshot: {
+    //   // An acceptable ratio of pixels that are different to the total amount of pixels, between 0 and 1.
+    //   maxDiffPixelRatio: 0.1,
+    // },
   },
 
   /* Run your local dev server before starting the tests */

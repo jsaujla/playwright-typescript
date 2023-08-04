@@ -1,0 +1,17 @@
+import { Page } from '@playwright/test';
+
+export class PlaywrightUtil {
+
+    protected constructor(private readonly page: Page) {}
+
+    async waitForNetworkIdle(timeout?: number) {
+        await this.page.waitForLoadState('networkidle', {timeout}).catch(() => {});
+    }
+
+    async printRequestConsoleLog(timeout?: number) {
+        this.page.on('request', request => {
+            console.log(request.url());
+        })
+    }
+
+}
