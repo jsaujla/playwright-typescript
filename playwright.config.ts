@@ -8,7 +8,7 @@ import path from 'path';
  */
 const env = process.env.ENV || 'qa';
 dotenv.config({
-  path: path.resolve(__dirname, `.env.${env}`)
+  path: path.resolve(__dirname, `env/.env.${env}`)
 })
 
 /**

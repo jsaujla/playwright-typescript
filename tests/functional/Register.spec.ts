@@ -19,12 +19,12 @@ test.describe("Register tests", async () => {
     await page.close();
   });
 
-  test("@smoke Verify valid registration", async () => {
+  test("Verify valid registration @smoke", async () => {
     let dynamicLoginUserName: string;
     await test.step("Register", async () => {
-      await pageManager.getRegisterPage().open();
+      await pageManager.registerPage.open();
       dynamicLoginUserName = faker.internet.userName();
-      await pageManager.getRegisterPage().register(
+      await pageManager.registerPage.register(
         dynamicLoginUserName,
         registerData.valid.firstName,
         registerData.valid.lastName,
@@ -33,26 +33,26 @@ test.describe("Register tests", async () => {
       );
     });
     await test.step("Verify register successful", async () => {
-      await pageManager.getRegisterPage().verifyRegistrationSuccessfulMessageVisible(registerData.valid.notificationMessage);
+      await pageManager.registerPage.verifyRegistrationSuccessfulMessageVisible(registerData.valid.notificationMessage);
     });
     await test.step("Login with registered user", async () => {
-      await pageManager.getHomePage().login(dynamicLoginUserName, registerData.valid.password);
-      await pageManager.getDashboardPage().verifyUserFirstNameDisplayed(registerData.valid.firstName);
+      await pageManager.homePage.login(dynamicLoginUserName, registerData.valid.password);
+      await pageManager.dashboardPage.verifyUserFirstNameDisplayed(registerData.valid.firstName);
     });
     await test.step("Verify user information under profile page", async () => {
       // TODO: Implement soft assertions
-      await pageManager.getDashboardPage().clickProfileLink();
-      await pageManager.getProfilePage().verifyLoginValue(dynamicLoginUserName);
-      await pageManager.getProfilePage().verifyFirstNameValue(registerData.valid.firstName);
-      await pageManager.getProfilePage().verifyLastNameValue(registerData.valid.lastName);
+      await pageManager.dashboardPage.clickProfileLink();
+      await pageManager.profilePage.verifyLoginValue(dynamicLoginUserName);
+      await pageManager.profilePage.verifyFirstNameValue(registerData.valid.firstName);
+      await pageManager.profilePage.verifyLastNameValue(registerData.valid.lastName);
     });
   });
 
   for (const data of registerData.existingUser) {
     test(`Verify invalid registration with existing user ${data.login} ${data.firstName} ${data.lastName} ${data.password}`, async () => {
       await test.step("Invalid register", async () => {
-        await pageManager.getRegisterPage().open();
-        await pageManager.getRegisterPage().register(
+        await pageManager.registerPage.open();
+        await pageManager.registerPage.register(
           data.login,
           data.firstName,
           data.lastName,
@@ -61,7 +61,7 @@ test.describe("Register tests", async () => {
         );
       });
       await test.step("Verify invalid register error message", async () => {
-        await pageManager.getRegisterPage().verifyUserAlreadyExistsErrorMessageDisplayed(data.errorMessage);
+        await pageManager.registerPage.verifyUserAlreadyExistsErrorMessageDisplayed(data.errorMessage);
       });
     });
   }

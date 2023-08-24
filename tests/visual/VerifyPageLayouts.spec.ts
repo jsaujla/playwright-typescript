@@ -4,29 +4,29 @@ import { LoginApi } from '../../api/LoginApi';
 import loginData from '../../test-data/login-data.json';
 import loginApiData from '../../test-data-api/login-api-data.json'
 
-test('@visual Verify register page layout', async ({ page }) => {
+test('Verify register page layout', async ({ page }) => {
   const pageManager = new PageManager(page);
-  await pageManager.getRegisterPage().open();
-  await pageManager.getRegisterPage().verifyPageLayout();  
+  await pageManager.registerPage.open();
+  await pageManager.registerPage.verifyPageLayout();  
 });
 
-test('@visual Verify home page layout', async ({ page }) => {
+test('Verify home page layout', async ({ page }) => {
   const pageManager = new PageManager(page);
-  await pageManager.getHomePage().open();
-  await pageManager.getHomePage().verifyPageLayout();  
+  await pageManager.homePage.open();
+  await pageManager.homePage.verifyPageLayout();  
 });
 
-test('@visual Verify dashboard page layout', async ({ page }) => {
+test('Verify dashboard page layout', async ({ page }) => {
   const pageManager = new PageManager(page);
-  await pageManager.getHomePage().open();
-  await pageManager.getHomePage().login(loginData.valid.username, loginData.valid.password);
-  await pageManager.getDashboardPage().verifyPageLayout();
+  await pageManager.homePage.open();
+  await pageManager.homePage.login(loginData.valid.username, loginData.valid.password);
+  await pageManager.dashboardPage.verifyPageLayout();
 });
 
-test('@visual Verify profile page layout', async ({ page }) => {
+test('Verify profile page layout', async ({ page }) => {
   const pageManager = new PageManager(page);
-  await pageManager.getHomePage().open();
-  await pageManager.getHomePage().login(loginData.valid.username, loginData.valid.password);
-  await pageManager.getDashboardPage().clickProfileLink();
-  await pageManager.getProfilePage().verifyPageLayout();
+  await pageManager.homePage.open();
+  await pageManager.homePage.login(loginData.valid.username, loginData.valid.password);
+  await pageManager.dashboardPage.clickProfileLink();
+  await pageManager.profilePage.verifyPageLayout();
 });

@@ -8,19 +8,19 @@
     "test": "npm run clean && playwright test",
     "generate-allure-report": "npx allure generate ./test-results-additional/allure-results -o test-results-additional/allure-report --clean",
     "open-allure-report": "npx allure open test-results-additional/allure-report",
-    "env:prod": "npx cross-env ENV=prod npx playwright test"
+    "env:prod": "cross-env ENV=prod npx playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@playwright/test": "^1.36.1",
+    "@playwright/test": "^1.36.2",
+    "allure-commandline": "^2.23.1", 
     "allure-playwright": "^2.4.0",
-    "cross-env": "^7.0.3"
-  },
-  "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
+    "prettier": "3.0.1",
     "rimraf": "^5.0.1"
   }
 }

@@ -20,13 +20,13 @@ test.describe("Login tests", async () => {
     await page.close();
   });
 
-  test("@smoke Verify valid login", async () => {
+  test("Verify valid login @smoke", async () => {
     await test.step("Login", async () => {
-      await pageManager.getHomePage().open();
-      await pageManager.getHomePage().login(loginData.valid.username, loginData.valid.password);
+      await pageManager.homePage.open();
+      await pageManager.homePage.login(loginData.valid.username, loginData.valid.password);
     });
     await test.step("Verify login successful", async () => {
-      await pageManager.getDashboardPage().verifyUserFirstNameDisplayed(loginData.valid.userFirstName);
+      await pageManager.dashboardPage.verifyUserFirstNameDisplayed(loginData.valid.userFirstName);
     });
   });
 
@@ -34,22 +34,22 @@ test.describe("Login tests", async () => {
     await test.step("Login via API", async () => {
       const loginApi = new LoginApi(page);
       await loginApi.login(loginApiData.endpoint, loginApiData.user.logintest);
-      await pageManager.getDashboardPage().open();
+      await pageManager.dashboardPage.open();
     });
     await test.step("Logout", async () => {
-      await pageManager.getDashboardPage().clickLogout();
+      await pageManager.dashboardPage.clickLogout();
     });
     await test.step("Verify logout successful", async () => {
-      await pageManager.getHomePage().verifyLoginButtonVisible();
-      await pageManager.getDashboardPage().verifyLogoutLinkNotVisible();
+      await pageManager.homePage.verifyLoginButtonVisible();
+      await pageManager.dashboardPage.verifyLogoutLinkNotVisible();
     });
   });
 
   for (const data of loginData.invalid) {
     test(`Verify invalid login ${data.username} ${data.password}`, async () => {
       await test.step("Invalid login", async () => {
-        await pageManager.getHomePage().open();
-        await pageManager.getHomePage().login(data.username, data.password);
+        await pageManager.homePage.open();
+        await pageManager.homePage.login(data.username, data.password);
       });
       await test.step("Verify invalid login error message", async () => {
         if (data.errorMessage == "Please fill out this field.") {
@@ -60,9 +60,9 @@ test.describe("Login tests", async () => {
           // Added 1 second wait to complete the navigation. If any case user moved to new page (in negative case)
           await page.waitForTimeout(1000);
         } else {
-          await pageManager.getHomePage().verifyInvalidLoginErrorMessageVisible(data.errorMessage);
+          await pageManager.homePage.verifyInvalidLoginErrorMessageVisible(data.errorMessage);
         }
-        await pageManager.getHomePage().verifyLoginButtonVisible();
+        await pageManager.homePage.verifyLoginButtonVisible();
       });
     });
   }
